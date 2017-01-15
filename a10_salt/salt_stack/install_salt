@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Add source
+wget -O - https://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
+echo "deb http://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest trusty main"" | sudo tee -a /etc/apt/sources.list.d/saltstack.list
+
+# Install reqs
+sudo apt-get -y update
+sudo apt-get install -y salt-master
+sudo apt-get install -y salt-minion
+sudo apt-get install -y salt-ssh
+sudo apt-get install -y salt-syndic
+sudo apt-get install -y salt-cloud
+sudo apt-get install -y salt-api
